@@ -21,12 +21,34 @@
         </requiredProperty>
         <requiredProperty key="initGitRepo">
             <defaultValue>true</defaultValue>
+            <validationRegex>^(true|True|TRUE|false|False|FALSE)$</validationRegex>
         </requiredProperty>
         <requiredProperty key="installOnCreate">
             <defaultValue>true</defaultValue>
+            <validationRegex>^(true|True|TRUE|false|False|FALSE)$</validationRegex>
         </requiredProperty>
         <requiredProperty key="npmInstall">
             <defaultValue>true</defaultValue>
+            <validationRegex>^(true|True|TRUE|false|False|FALSE)$</validationRegex>
+        </requiredProperty>
+        <requiredProperty key="style">
+            <defaultValue>scss</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="inlineTemplate">
+            <defaultValue>false</defaultValue>
+            <validationRegex>^(true|True|TRUE|false|False|FALSE)$</validationRegex>
+        </requiredProperty>
+        <requiredProperty key="inlineStyle">
+            <defaultValue>false</defaultValue>
+            <validationRegex>^(true|True|TRUE|false|False|FALSE)$</validationRegex>
+        </requiredProperty>
+        <requiredProperty key="routing">
+            <defaultValue>false</defaultValue>
+            <validationRegex>^(true|True|TRUE|false|False|FALSE)$</validationRegex>
+        </requiredProperty>
+        <requiredProperty key="createAngularApp">
+            <defaultValue>true</defaultValue>
+            <validationRegex>^(true|True|TRUE|false|False|FALSE)$</validationRegex>
         </requiredProperty>
     </requiredProperties>
     <fileSets>
@@ -42,6 +64,7 @@
                 <include>.gitignore</include>
                 <include>mvnw</include>
                 <include>mvnw.cmd</include>
+                <include>update-package-json.js</include>
             </includes>
         </fileSet>
     </fileSets>
