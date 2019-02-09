@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype-descriptor
+        xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd"
+        xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        name="angular-boot">
+    <requiredProperties>
+        <requiredProperty key="version">
+            <defaultValue>1.0.0-SNAPSHOT</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="artifactIdCamelCase">
+            <defaultValue>
+                ${artifactId.replaceAll("^a|-a", "A").replaceAll("^b|-b", "B").replaceAll("^c|-c", "C").replaceAll("^d|-d", "D").replaceAll("^e|-e", "E").replaceAll("^f|-f", "F").replaceAll("^g|-g", "G").replaceAll("^h|-h", "H").replaceAll("^i|-i", "I").replaceAll("^j|-j", "J").replaceAll("^k|-k", "K").replaceAll("^l|-l", "L").replaceAll("^m|-m", "M").replaceAll("^n|-n", "N").replaceAll("^o|-o", "O").replaceAll("^p|-p", "P").replaceAll("^q|-q", "Q").replaceAll("^r|-r", "R").replaceAll("^s|-s", "S").replaceAll("^t|-t", "T").replaceAll("^u|-u", "U").replaceAll("^v|-v", "V").replaceAll("^w|-w", "W").replaceAll("^x|-x", "X").replaceAll("^y|-y", "Y").replaceAll("^z|-z", "Z")}
+            </defaultValue>
+        </requiredProperty>
+        <requiredProperty key="appPackage">
+            <defaultValue>${artifactId.replaceAll("-", "").toLowerCase()}</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="springBootStarterParentVersion">
+            <defaultValue>2.1.2.RELEASE</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="initGitRepo">
+            <defaultValue>true</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="installOnCreate">
+            <defaultValue>true</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="npmInstall">
+            <defaultValue>true</defaultValue>
+        </requiredProperty>
+    </requiredProperties>
+    <fileSets>
+        <fileSet encoding="UTF-8">
+            <directory>.mvn</directory>
+            <includes>
+                <include>**/*</include>
+            </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+            <directory/>
+            <includes>
+                <include>.gitignore</include>
+                <include>mvnw</include>
+                <include>mvnw.cmd</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+    <modules>
+        <module id="${rootArtifactId}-rest" dir="__rootArtifactId__-rest" name="${rootArtifactId}-rest">
+            <fileSets>
+                <fileSet filtered="true" packaged="true" encoding="UTF-8">
+                    <directory>src/main/java</directory>
+                    <includes>
+                        <include>**/*.java</include>
+                    </includes>
+                </fileSet>
+                <fileSet filtered="true" encoding="UTF-8">
+                    <directory>src/main/resources</directory>
+                    <includes>
+                        <include>**/*.yml</include>
+                    </includes>
+                </fileSet>
+            </fileSets>
+        </module>
+        <module id="${rootArtifactId}-web" dir="__rootArtifactId__-web" name="${rootArtifactId}-web">
+            <fileSets>
+                <fileSet filtered="true" encoding="UTF-8">
+                    <directory>src</directory>
+                    <includes>
+                        <include>**/*.html</include>
+                    </includes>
+                </fileSet>
+                <fileSet filtered="true" encoding="UTF-8">
+                    <directory>src/app</directory>
+                    <includes>
+                        <include>**/*.html</include>
+                    </includes>
+                </fileSet>
+                <fileSet filtered="true" encoding="UTF-8">
+                    <directory>e2e/src</directory>
+                    <includes>
+                        <include>**/*.ts</include>
+                    </includes>
+                </fileSet>
+                <fileSet filtered="true" encoding="UTF-8">
+                    <directory>src</directory>
+                    <includes>
+                        <include>**/*.</include>
+                        <include>**/*.ico</include>
+                        <include>**/*.scss</include>
+                        <include>**/*.js</include>
+                        <include>**/*.json</include>
+                        <include>**/*.ts</include>
+                    </includes>
+                </fileSet>
+                <fileSet filtered="true" encoding="UTF-8">
+                    <directory>e2e</directory>
+                    <includes>
+                        <include>**/*.js</include>
+                        <include>**/*.json</include>
+                    </includes>
+                </fileSet>
+                <fileSet filtered="true" encoding="UTF-8">
+                    <directory>src/app</directory>
+                    <includes>
+                        <include>**/*.scss</include>
+                        <include>**/*.ts</include>
+                    </includes>
+                </fileSet>
+                <fileSet encoding="UTF-8">
+                    <directory>src/assets</directory>
+                    <includes>
+                        <include>**/*.gitkeep</include>
+                    </includes>
+                </fileSet>
+                <fileSet filtered="true" encoding="UTF-8">
+                    <directory>src/environments</directory>
+                    <includes>
+                        <include>**/*.ts</include>
+                    </includes>
+                </fileSet>
+                <fileSet filtered="true" encoding="UTF-8">
+                    <directory/>
+                    <includes>
+                        <include>angular.json</include>
+                        <include>package.json</include>
+                        <include>README.md</include>
+                        <include>.editorconfig</include>
+                        <include>package-lock.json</include>
+                        <include>README.md</include>
+                        <include>tsconfig.json</include>
+                        <include>tslint.json</include>
+                    </includes>
+                </fileSet>
+            </fileSets>
+        </module>
+        <module id="${rootArtifactId}-app" dir="__rootArtifactId__-app" name="${rootArtifactId}-app">
+        </module>
+    </modules>
+</archetype-descriptor>
