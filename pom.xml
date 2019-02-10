@@ -10,6 +10,7 @@
   <name>angular-boot-archetype</name>
 
   <build>
+    <finalName>${artifactId}.jar</finalName>
     <extensions>
       <extension>
         <groupId>org.apache.maven.archetype</groupId>
