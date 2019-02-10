@@ -1,6 +1,6 @@
 
 ## Angular Boot Archetype ##
-[![CircleCI](https://circleci.com/gh/DavidSeptimus/angular-boot-archetype.svg?style=svg)](https://circleci.com/gh/DavidSeptimus/angular-boot-archetype)
+[![CircleCI](https://img.shields.io/circleci/project/github/DavidSeptimus/angular-boot-archetype/master.svg?style=flat)](https://circleci.com/gh/DavidSeptimus/angular-boot-archetype)
 #### Description ####
  angular-boot-archetype is a maven archetype for generating a multi-module project with separate Spring Boot and Angular modules 
  that are combined into a fat JAR file for easier distribution and deployment
@@ -21,7 +21,7 @@
  * Maven
  * JDK 8+
  
- #### Tested With ####
+ #### Tested on Windows With ####
  * Windows 10 Pro
  * Maven: 3.6.0
  * Maven Archetype Plugin: 3.0.1
@@ -29,8 +29,10 @@
  * npm: 5.6.0
  * Angular CLI: 7.3.1
  
- ###### *Note: It should work on non-windows environments, but has not been tested* ######
- 
+#### Linux Testing Environment #####
+* Docker Image: https://hub.docker.com/r/cschockaert/docker-npm-maven
+* CI: https://circleci.com/gh/DavidSeptimus/workflows/angular-boot-archetype
+
  ### Simple Usage ###
  
 1. run `mvn org.apache.maven.plugins:maven-archetype-plugin:3.0.1:generate  -Dfilter=com.dseptimus:angular-boot-archetype` from your terminal of choice
@@ -56,7 +58,7 @@
 
 #### Important Considerations ####
 * This archetype is currently incompatible with the Intellij'a `New Project -> Maven -> Create from Achetype` wizard
-due to its use of an outdated version of maven-archetype-plugin.
+due to Intellij's use of an outdated version of maven-archetype-plugin.
 see: https://youtrack.jetbrains.com/issue/IDEA-206998
 * In order for the post-generate groovy script tasks to run successfully, maven, git, and npm need to be included 
 in your system's `PATH` environment variable
