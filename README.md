@@ -59,4 +59,3 @@
 #### Important Considerations ####
 * In order for the post-generate groovy script tasks to run successfully, maven, git, node, and npm need to be included 
 in your system's `PATH` environment variable
-* Usage from within Intellij requires that the 'use plugin registry' option is enabled for new projects.
