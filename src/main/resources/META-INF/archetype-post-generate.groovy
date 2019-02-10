@@ -72,12 +72,7 @@ private void initAngularProject(String root, String ngCliVersion = 'latest') {
                 "--interactive=false",
                 '--skipGit=true'
     ]*.toString() as List, root)
-    // runCommand([npm, 'version', request.version], webArtifactPath)
     updatePackageJson()
-}
-
-void validateNgCliVersion(cliVersion, libVersion) {
-    //ToDo: add real implementation (throw exception if validation fails)
 }
 
 def isTrue(val) {
