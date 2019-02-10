@@ -1,5 +1,6 @@
-## Angular Boot Archetype ##
 
+## Angular Boot Archetype ##
+[![CircleCI](https://circleci.com/gh/DavidSeptimus/angular-boot-archetype.svg?style=svg)](https://circleci.com/gh/DavidSeptimus/angular-boot-archetype)
 #### Description ####
  angular-boot-archetype is a maven archetype for generating a multi-module project with separate Spring Boot and Angular modules 
  that are combined into a fat JAR file for easier distribution and deployment
