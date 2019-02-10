@@ -57,8 +57,6 @@
 
 
 #### Important Considerations ####
-* This archetype is currently incompatible with the Intellij'a `New Project -> Maven -> Create from Achetype` wizard
-due to Intellij's use of an outdated version of maven-archetype-plugin.
-see: https://youtrack.jetbrains.com/issue/IDEA-206998
-* In order for the post-generate groovy script tasks to run successfully, maven, git, and npm need to be included 
+* In order for the post-generate groovy script tasks to run successfully, maven, git, node, and npm need to be included 
 in your system's `PATH` environment variable
+* Usage from within Intellij requires that the 'use plugin registry' option is enabled for new projects.
