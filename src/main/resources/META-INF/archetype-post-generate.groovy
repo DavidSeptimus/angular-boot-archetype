@@ -5,7 +5,7 @@ import java.nio.file.Paths
 import static groovy.json.JsonOutput.*
 
 
-def isWindows = System.getenv('OS').contains('Windows')
+def isWindows = isTrue(System.properties['os.name']?.contains('Windows'))
 println "OS ${isWindows ? 'is' : 'is not'} Windows"
 
 executables = [
