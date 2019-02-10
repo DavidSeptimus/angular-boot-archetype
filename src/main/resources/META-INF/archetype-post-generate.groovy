@@ -2,6 +2,7 @@ import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.Paths
 
+import org.apache.commons.io.FileUtils
 import static groovy.json.JsonOutput.*
 
 
@@ -20,28 +21,25 @@ println "executables:\n${printMap(executables)}"
 archProperties = request.properties
 println printMap(archProperties)
 
-rootArtifactPath = "${Paths.get(request.outputDirectory, request.artifactId)}" as String
+rootArtifactPath = Paths.get(request.outputDirectory, request.artifactId).toString()
 webArtifactId = "${request.artifactId}-web"
-webArtifactPath = "${Paths.get(rootArtifactPath, webArtifactId)}" as String
+webArtifactPath = Paths.get(rootArtifactPath, webArtifactId).toString()
+postGenerateResourcesPath = Paths.get(rootArtifactPath , '.post-generate-resources').toString()
 
+// Post Generate Workflow
 if (isTrue(archProperties.initGitRepo)) runCommand([executables.git, 'init'], rootArtifactPath)
-
 else println 'skipping git int...'
-
 println "initializing ${webArtifactId}..."
+
 initAngularProject(rootArtifactPath)
+
+cleanupPostGenerateResources()
 
 runCommand([executables.git, 'add', '--all'], rootArtifactPath)
 
 if (isTrue(archProperties.installOnCreate)) runCommand([executables.mvn, 'install'], rootArtifactPath)
 else println 'skipping mvn install...'
 
-
-/* check version of angular cli
- fail if too old and prompt to uninstall
- install angular cli global
-  create new project skip git
-  npm version using ${version}*/
 
 private void initAngularProject(String root, String ngCliVersion = 'latest') {
     def npm = executables.npm
@@ -108,8 +106,12 @@ def updatePackageJson() {
     runCommand([executables.node,
                 'update-package-json.js',
                 "${Paths.get(webArtifactPath, 'package.json')}",
-                request.version]*.toString(), rootArtifactPath)
-    new File(Paths.get(rootArtifactPath, 'update-package-json.js').toUri()).delete()
+                request.version]*.toString(), postGenerateResourcesPath)
     println 'finished updating package.json'
+}
 
+def cleanupPostGenerateResources() {
+    println "cleaning up ${postGenerateResourcesPath}..."
+    FileUtils.forceDelete(new File(postGenerateResourcesPath))
+    println 'cleanup complete'
 }

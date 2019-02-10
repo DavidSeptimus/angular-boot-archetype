@@ -9,6 +9,10 @@
 
   <name>angular-boot-archetype</name>
 
+  <properties>
+    <groovy.version>2.5.6</groovy.version>
+  </properties>
+
   <build>
     <finalName>${project.artifactId}</finalName>
     <extensions>
@@ -55,4 +59,22 @@
   <scm>
     <url>https://github.com/DavidSeptimus/angular-boot-archetype</url>
   </scm>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.codehaus.groovy</groupId>
+      <artifactId>groovy</artifactId>
+      <version>${groovy.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.groovy</groupId>
+      <artifactId>groovy-json</artifactId>
+      <version>${groovy.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>2.6</version>
+    </dependency>
+  </dependencies>
 </project>

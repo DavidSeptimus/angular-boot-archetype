@@ -64,7 +64,12 @@
                 <include>.gitignore</include>
                 <include>mvnw</include>
                 <include>mvnw.cmd</include>
-                <include>update-package-json.js</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory>.post-generate-resources</directory>
+            <includes>
+                <include>**/*</include>
             </includes>
         </fileSet>
     </fileSets>
@@ -88,71 +93,9 @@
         <module id="${rootArtifactId}-web" dir="__rootArtifactId__-web" name="${rootArtifactId}-web">
             <fileSets>
                 <fileSet filtered="true" encoding="UTF-8">
-                    <directory>src</directory>
-                    <includes>
-                        <include>**/*.html</include>
-                    </includes>
-                </fileSet>
-                <fileSet filtered="true" encoding="UTF-8">
-                    <directory>src/app</directory>
-                    <includes>
-                        <include>**/*.html</include>
-                    </includes>
-                </fileSet>
-                <fileSet filtered="true" encoding="UTF-8">
-                    <directory>e2e/src</directory>
-                    <includes>
-                        <include>**/*.ts</include>
-                    </includes>
-                </fileSet>
-                <fileSet filtered="true" encoding="UTF-8">
-                    <directory>src</directory>
-                    <includes>
-                        <include>**/*.</include>
-                        <include>**/*.ico</include>
-                        <include>**/*.scss</include>
-                        <include>**/*.js</include>
-                        <include>**/*.json</include>
-                        <include>**/*.ts</include>
-                    </includes>
-                </fileSet>
-                <fileSet filtered="true" encoding="UTF-8">
-                    <directory>e2e</directory>
-                    <includes>
-                        <include>**/*.js</include>
-                        <include>**/*.json</include>
-                    </includes>
-                </fileSet>
-                <fileSet filtered="true" encoding="UTF-8">
-                    <directory>src/app</directory>
-                    <includes>
-                        <include>**/*.scss</include>
-                        <include>**/*.ts</include>
-                    </includes>
-                </fileSet>
-                <fileSet encoding="UTF-8">
-                    <directory>src/assets</directory>
-                    <includes>
-                        <include>**/*.gitkeep</include>
-                    </includes>
-                </fileSet>
-                <fileSet filtered="true" encoding="UTF-8">
-                    <directory>src/environments</directory>
-                    <includes>
-                        <include>**/*.ts</include>
-                    </includes>
-                </fileSet>
-                <fileSet filtered="true" encoding="UTF-8">
                     <directory/>
                     <includes>
-                        <include>angular.json</include>
-                        <include>package.json</include>
-                        <include>README.md</include>
-                        <include>.editorconfig</include>
-                        <include>package-lock.json</include>
-                        <include>README.md</include>
-                        <include>tsconfig.json</include>
-                        <include>tslint.json</include>
+                        <include>pom.xml</include>
                     </includes>
                 </fileSet>
             </fileSets>
