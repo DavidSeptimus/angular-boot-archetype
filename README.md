@@ -9,7 +9,7 @@
  
  Spring security is included by default with a default configuration that disables security for all endpoints.
  
- The web module is generated dynamically using Angular CLI keep decouple the Angular module version from the Archetype
+ The web module is generated dynamically using Angular CLI decouple the Angular module version from the Archetype
  version.
  
  #### Generated Submodules ####
